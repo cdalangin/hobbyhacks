@@ -1,0 +1,14 @@
+body {
+    background-color: #59B9EA;
+}
+
+#home {
+    height: 100vh;
+}
+
+.logo {
+    max-height: 30%;
+    left: -20px;
+    top: -20px;
+    transform: rotate(-15deg);
+}

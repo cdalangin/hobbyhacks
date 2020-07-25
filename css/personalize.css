@@ -2,6 +2,10 @@ body {
     background-color: black;
 }
 
+#questions {
+    background-color: black;
+}
+
 ul {
     justify-content: center;
 }

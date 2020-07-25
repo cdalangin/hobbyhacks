@@ -60,26 +60,38 @@
                     
                     $('body').append(
                         `<div id='colorsContainer'>
-                            <h3 class='display-4'> Color Palette</h3>
+                            <h3 class='display-4'> With </h3>
                             <div class='colorDiv' style="background-color:${color1}"> ${color1}</div>
                             <div class='colorDiv' style="background-color:${color2}"> ${color2}</div>
                             <div class='colorDiv' style="background-color:${color3}"> ${color3}</div>
                             <div class='colorDiv' style="background-color:${color4}"> ${color4}</div>
                             <div class='colorDiv' style="background-color:${color5}"> ${color5}</div>
-                        </div>`);
+                        </div><br>`);
                 });
             }
 
+            $('body').append(
+            `<div id='wordContainer'>
+                <h3 class='display-4'> Draw </h3></div>`);
+
             if (wordPrompt){
+                $('#wordContainer').append(
+                    `
+                        <h4 class='display-4' id='word'>a caterpillar</h4>
+                `);
                 $('body').append(
-                    `<div id='wordContainer'>
-                        <h3 class='display-4'> Word Prompt </h3>
-                        <h4 class='display-4' id='word'> dog</h4>
-                    </div>`);
+                    "<br>"
+                );
             }
 
             if (songPrompt){
-
+                $('body').append(
+                    `<div id='songContainer'>
+                        <h3 class='display-4'> On </h3>
+                        <iframe width="300" height="115" src="https://www.youtube.com/embed/wOwblaKmyVw" frameborder="0" 
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        </iframe>
+                    </div><br>`);
             }
 
         });

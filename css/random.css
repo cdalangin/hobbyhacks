@@ -1,3 +1,7 @@
+body{
+    overflow: hidden;
+}
+
 h1{
     color: darkviolet;
     margin-bottom: 2%;
@@ -42,9 +46,10 @@ h3{
 }
 
 #colorsContainer, #wordContainer, #songContainer{
-    margin-bottom: 4%;
-    margin: auto;
-    width: 30%;
+    /* margin-bottom: 4%; */
+    /* margin: auto; */
+    width: 70%;
+    margin-left: 2%;
 }
 
 .colorDiv{

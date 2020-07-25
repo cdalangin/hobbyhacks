@@ -10,31 +10,45 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/getInspired.css">
     <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            const box = document.querySelector('.box');
+
+            setInterval(setBorderRadius, 300);
+
+            function setBorderRadius() {
+                box.style.setProperty('--br-blobby', generateBorderRadiusValue());
+                box.style.setProperty('--br-blobby-after', generateBorderRadiusValue());
+                box.style.setProperty('--br-blobby-before', generateBorderRadiusValue());
+            }
+
+            function generateBorderRadiusValue() {
+                return `${getRandomValue()}% ${getRandomValue()}% ${getRandomValue()}% ${getRandomValue()}% / ${getRandomValue()}% ${getRandomValue()}% ${getRandomValue()}%`;
+            }
+                
+            function getRandomValue() {
+                return Math.floor(Math.random() * 50) + 50;
+            }
+        });
+    </script>
 </head>
 
 <body>
-
-    <section id="home" class="container-fluid d-flex p-5 align-items-center">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="card col-sm-8 position-relative">
-                    <img src="logo.png" alt="logo" class="position-absolute logo">
-                    <div class="card-body">
-                        <div class="row justify-content-center my-5">
-                            <a href="random.html" type="button" class="btn btn-outline-dark btn-lg">Surprise Me!</a>
-                        </div>
-                        <div class="row justify-content-center my-5">
-                            <a href="form.html" type="button" class="btn btn-outline-dark btn-lg">Personalize</a>
-                        </div>
-                        <div class="row justify-content-center my-5">
-                            <a href="beginner.html" type="button" class="btn btn-outline-dark btn-lg">For Beginners</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="container">
+        <div class="row justify-content-center my-5">
+            <a href="random.html" type="button" class="btn btn-outline-dark btn-lg">Surprise Me!</a>
         </div>
-    </section>
+        <div class="row justify-content-center my-5">
+            <a href="form.html" type="button" class="btn btn-outline-dark btn-lg">Personalize</a>
+        </div>
+        <div class="row justify-content-center my-5">
+            <a href="beginner.html" type="button" class="btn btn-outline-dark btn-lg">For Beginners</a>
+        </div>
+    </div>
+
+    <div class="box"></div>
 </body>
 
 </html>

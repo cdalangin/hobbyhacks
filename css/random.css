@@ -12,13 +12,21 @@ h4{
     background-color: black;
     color: white;
     text-shadow: 1px black;
-    float: right;
     border-color: darkviolet;
+    width: 240px;
+    font-size: 25px;
+}
+
+#getPromptsButton{
+    float: right;
     margin-right: 2%;
     margin-bottom: 2%;
     margin-top: 7%;
-    width: 240px;
-    font-size: 25px;
+}
+
+#usefulButton{
+    margin-left: 40%;
+    margin-bottom: 1%;
 }
 
 .form-check-input{
@@ -45,15 +53,21 @@ h3{
     color: white;
 }
 
-#colorsContainer, #wordContainer, #songContainer{
+#colorsContainer, #wordContainer{
     /* margin-bottom: 4%; */
     /* margin: auto; */
     width: 70%;
     margin-left: 2%;
 }
 
+#songContainer{
+    float: right;
+    margin-right: 6%;
+}
+
 .colorDiv{
     width: 300px;
+    height: 50px;
     color: black;
 }
 

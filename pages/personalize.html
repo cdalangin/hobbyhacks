@@ -14,7 +14,62 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
     <link rel="stylesheet" href="../css/personalize.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
 
+        styleArtists = {
+            'Realism':['Paul Stowe', 'Eric Armusik', 'hantograph', 'Svetlana Makarenko'],
+            'Cartoon':['Karmen Loh', 'Gabriel Picolo', 'Alicja Nai', 'viria'],
+            'Chibi': ['ibu_chuan', 'nemupan'],
+            'Anime': [ 'Akira', 'cioccolato_kun', 'kuvshinov_ilya', 'Salgoo'],
+            'Impressionism': ['Claude Monet', 'Richard Claremont', 'Pierre Auguste Renoir', 'Raahat Kaduji'],
+            'Pop Art': ['Andy Warhol', 'Roy Lichtenstein', 'Denny Rahayu'],
+            'Art Deco': ['Tamara de Lempicka', 'Jean Dupas']
+        }
+            
+        moodColors = {'Happy': 'FFFF00','Sad': '0000FF','Fear': '696969','Disgust': '008000','Anger': '8B0000', 'Surprise': '800080'}
+        $('#generateButton').click(function(){
+            var style = $('input[name=art_style]:checked').parent().find('label').text();
+            var medium= $('input[name=art_medium]:checked').parent().find('label').text();
+            var mood = $('input[name=mood]:checked').parent().find('label').text();
+            
+            $('body').empty();
+
+            possibleArtists = styleArtists[style];
+            artist = possibleArtists[Math.floor(Math.random()*possibleArtists.length)];
+            $('body').append(
+                `<div id='artistContainer'>
+                    <h3 class='display-4'>Check out ${artist}</h3>
+                    <img id='painting' src='../media/${artist}.jpg'></img>
+                 </div>`);
+
+            mainColor = moodColors[mood];
+            $.ajax({
+                    url: `https://www.thecolorapi.com/scheme?hex=${mainColor}&count=5&format=json&mode=analogic-complement`,
+                })
+                .done(function(data) {
+                    color1 = data['colors'][0]['hex']['value'];
+                    color2 = data['colors'][1]['hex']['value'];
+                    color3 = data['colors'][2]['hex']['value'];
+                    color4 = data['colors'][3]['hex']['value'];
+                    color5 = data['colors'][4]['hex']['value'];
+
+                    $('body').append(
+                        `<div id='colorsContainer'>
+                            <h3 class='display-4'> Try this palette </h3>
+                            <div class='colorDiv' style="background-color:${color1}"> ${color1}</div>
+                            <div class='colorDiv' style="background-color:${color2}"> ${color2}</div>
+                            <div class='colorDiv' style="background-color:${color3}"> ${color3}</div>
+                            <div class='colorDiv' style="background-color:${color4}"> ${color4}</div>
+                            <div class='colorDiv' style="background-color:${color5}"> ${color5}</div>
+                        </div><br>`);
+                    
+                    $('body').append('<button class="btn" id="usefulButton"> This was useful!  <span style="font-size:100%;color:red;">&hearts;</span></button>')
+                });
+        });
+    });
+    </script>
 </head>
 
 <body>
@@ -22,7 +77,7 @@
         <div class="container">
             <div class="row">
                 <div class="container col-sm-8 position-relative p-5" id="questions">
-                    <form action="results.html">
+                    <form id='myForm'>
 
                         <h3 class="text-light text-center display-4">What is your art style?</h3>
 
@@ -62,11 +117,11 @@
 
                         <ul class="choices text-center">
                             <li>
-                                <input type="radio" id="m1" name="art_medium" checked="checked" />
+                                <input type="radio" id="m1" name="art_medium" value='digital' checked="checked" />
                                 <label for="m1">Digital</label>
                             </li>
                             <li>
-                                <input type="radio" id="m2" name="art_medium" />
+                                <input type="radio" id="m2" value='pen' name="art_medium" />
                                 <label for="m2">Pen</label>
                             </li>
                             <li>
@@ -137,72 +192,8 @@
 
                         </ul>
 
-                        <h3 class="text-light text-center display-4">What is your favorite genre?</h3>
-
-                        <ul class="choices text-center">
-                            <li>
-                                <input type="radio" id="g1" name="genre" checked="checked" />
-                                <label for="g1">Romance</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="g2" name="genre" />
-                                <label for="g2">Action</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="g3" name="genre" />
-                                <label for="g3">Sci-Fi</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="g4" name="genre" />
-                                <label for="g4">Fantasy</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="g5" name="genre" />
-                                <label for="g5">Horror/Suspense</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="g6" name="genre" />
-                                <label for="g6">Mystery/Crime</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="g7" name="genre" />
-                                <label for="g7">Historical</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="g8" name="genre" />
-                                <label for="g8">Western</label>
-                            </li>
-
-                        </ul>
-
-                        <h3 class="text-light text-center display-4">What would you like to draw?</h3>
-
-                        <ul class="choices text-center">
-                            <li>
-                                <input type="radio" id="t1" name="subject" checked="checked" />
-                                <label for="t1">People</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="t2" name="subject" />
-                                <label for="t2">Animals</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="t3" name="subject" />
-                                <label for="t3">Mythical Creatures</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="t4" name="subject" />
-                                <label for="t4">Landscapes</label>
-                            </li>
-                            <li>
-                                <input type="radio" id="t5" name="subject" />
-                                <label for="t5">Object</label>
-                            </li>
-
-                        </ul>
-
                         <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-lg btn-outline-light mt-5 px-4 py-2">Lets go <svg
+                            <button id='generateButton' type="submit" class="btn btn-lg btn-outline-light mt-5 px-4 py-2">Let's go <svg
                                     width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-short"
                                     fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"

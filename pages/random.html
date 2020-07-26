@@ -43,6 +43,7 @@
         songPrompt = false;
         color1 = ''; color2 = ''; color3 = ''; color4 = ''; color5 = '';
         $(document).ready(function () {
+            $('#body').append('<button class="btn" id="usefulButton"> This was useful!  <span style="font-size:100%;color:red;">&hearts;</span></button>')
             $("#getPromptsButton").click(function () {
                 //if selected, get a random word
                 if ($('#wordCheck').is(":checked")) {
@@ -59,7 +60,9 @@
                     songPrompt = true;
                 }
 
-                $('body').empty();
+                $('#main').empty();
+
+
 
                 if (colorPrompt) {
                     randomColor = getRandomColor()
@@ -73,9 +76,9 @@
                             color4 = data['colors'][3]['hex']['value'];
                             color5 = data['colors'][4]['hex']['value'];
 
-                            $('body').append(
+                            $('#main').append(
                                 `<div id='colorsContainer'>
-                                <h3 class='display-4'> With </h3>
+                                <h3 class='display-4'> Use these: </h3>
                                 <div class='colorDiv' style="background-color:${color1}"> ${color1}</div>
                                 <div class='colorDiv' style="background-color:${color2}"> ${color2}</div>
                                 <div class='colorDiv' style="background-color:${color3}"> ${color3}</div>
@@ -83,26 +86,26 @@
                                 <div class='colorDiv' style="background-color:${color5}"> ${color5}</div>
                             </div><br>`);
 
-                            $('body').append('<button class="btn" id="usefulButton"> This was useful!  <span style="font-size:100%;color:red;">&hearts;</span></button>')
                         });
                 }
 
-                $('body').append(
-                    `<div id='wordContainer'>
-                    <h3 class='display-4'> Draw </h3></div>`);
 
                 if (wordPrompt) {
                     word = words[Math.floor(Math.random() * words.length)];
 
+                    $('#main').append(
+                        `<div id='wordContainer'>
+                    <h3 class='display-4'> Draw: </h3></div>`)
                     $('#wordContainer').append(`<h4 class='display-4' id='word'>${word}</h4>`);
                     $('body').append("<br>");
+
                 }
 
                 if (songPrompt) {
                     song = ytLinks[Math.floor(Math.random() * ytLinks.length)]
                     $('body').append(
                         `<div id='songContainer'>
-                            <h3 class='display-4'> Inspired by </h3>
+                            <h3 class='display-4'> Get inspired by: </h3>
                             <iframe width="560" height="290" src=${song} frameborder="0" 
                                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                             </iframe>
@@ -120,7 +123,7 @@
 
 
     <!-- Contents -->
-    <div class='container-fluid d-flex p-3'>
+    <div id="main" class='container-fluid d-flex p-3'>
         <div class="container p-4">
             <h1 class='display-3 mb-4 text-center'>What do you wish to be inspired by?</h1>
             <h3 class="text-center">Select all that apply</h6>

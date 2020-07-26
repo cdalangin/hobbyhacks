@@ -7,8 +7,8 @@ body {
 }
 
 .logo {
-    max-height: 30%;
-    left: -20px;
-    top: -20px;
-    transform: rotate(-15deg);
+    width: 10%;
+    top: 2.5%;
+    right: 2.5%;
+
 }

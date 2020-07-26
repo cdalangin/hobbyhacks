@@ -9,9 +9,9 @@ h2{
     color: white;
 }
 
-h1, h2{
+/* h1, h2{
     margin-left: 2%;
-}
+} */
 
 .btn{
     background-color: black;
@@ -45,58 +45,3 @@ h1, h2{
     80%  { transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg); }
     100% { transform: scale(1)   translate(10px, -30px); }
   }
-
-/* .loading_cont {
-    width: 40%;
-    height: 50%;
-    z-index: -1;
-    margin-left: 40%;
-   }
-   
-.loading_cont:before {
-    content: "";
-    position: absolute;
-    width: 40%;
-    height: 50%;
-    z-index: -1;
-    background: url(https://next.atcom.gr/StaticData/Landing2017/Content/Media/dots-transparent.png) repeat scroll center center;
-    opacity: 0.05;
-}
-   
-#loader {
-    display: inline-block;
-    position: relative;
-    width: 800px;
-    height: 800px;
-    top: 50%;
-    left: 50%;
-    margin-left: -400px;
-    margin-top: -400px;
-}
-   
-rect {
-    -webkit-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
-    z-index: -1;
-    left: 0;
-    top: 0;
-    width: 80%;
-    height: 80%;
-}
-
-svg{
-    z-index: -1;
-}
-   
-.blobs {
-    -webkit-filter: url("#goo");
-    filter: url("#goo");
-}
-
-.blob {
-    fill: white;
-    z-index: -1;
-    top: 0;
-    left: 0;
-}
-    */

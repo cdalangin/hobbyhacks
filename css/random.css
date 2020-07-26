@@ -1,0 +1,83 @@
+body {
+    background-size: cover;
+    background-color: black;
+}
+
+h1{
+    color: darkviolet;
+}
+
+.logo {
+    width: 10%;
+    top: 2.5%;
+    right: 2.5%;
+
+}
+
+.btn{
+    color: darkviolet;
+    border-color: darkviolet;
+    font-size: 25px;
+    right: 5%;
+}
+
+/* .form-check-input{
+    color: white;
+    width: 30px;
+    height: 30px;
+} */
+
+.form-check-label{
+    color: white;
+    font-size: 30px;
+    
+}
+
+/* Let's Go Button */
+
+#random input[type="checkbox"] {
+    display: none;
+  }
+  
+  #random span {
+    display: flex;
+    white-space: nowrap;
+    padding: 10px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid darkviolet;
+    border-radius: 5px;
+    color: darkviolet;
+  }
+  
+  #random input[type="checkbox"]:checked + span {
+    background-color: darkviolet;
+    color: white;
+    
+  }
+
+/* #container {
+    margin: auto;
+} */
+
+/* Results */
+
+h3 {
+    color: darkviolet;
+}
+
+#word {
+    color: white;
+}
+
+#colorsContainer, #wordContainer, #songContainer{
+    width: 50%;
+    margin-left: 2%;
+}
+
+.colorDiv{
+    color: black;
+}
+
+
+

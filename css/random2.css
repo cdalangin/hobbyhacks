@@ -1,0 +1,82 @@
+h1{
+    color: darkviolet;
+    margin-bottom: 2%;
+    margin-left: 2%;
+}
+
+.btn{
+    background-color: black;
+    color: white;
+    text-shadow: 1px black;
+    border-color: darkviolet;
+    float: left;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    margin-top: 4%;
+    width: 240px;
+    font-size: 25px;
+}
+
+.form-check-input{
+    color: white;
+    margin-top: 5%;
+    width: 30px;
+    height: 30px;
+}
+
+.form-check-label{
+    color: white;
+    margin-top: 4%;
+    font-size: 30px;
+    margin-left: 3%;
+}
+
+#container{
+    margin: auto;
+    width: 50%;
+    margin-top: 1%;
+}
+
+h3{
+    color: white;
+}
+
+#colorsContainer, #wordContainer, #songContainer{
+    /* margin-bottom: 4%; */
+    /* margin: auto; */
+    width: 70%;
+    margin-left: 2%;
+}
+
+.colorDiv{
+    width: 300px;
+    color: black;
+}
+
+
+#random input[type="checkbox"] {
+    display: none;
+  }
+  
+  #random span {
+    display: flex;
+    white-space: nowrap;
+    padding: 10px 15px;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid darkviolet;
+    border-radius: 5px;
+    color: darkviolet;
+  }
+  
+  #random input[type="checkbox"]:checked + span {
+    background-color: darkviolet;
+    color: white;
+    
+  }
+
+#e9b162a7-313d-4f8d-b0d0-5b52289eb01b {
+    height: 400px;
+    flex-wrap: initial;
+    padding-left: -20px;
+}

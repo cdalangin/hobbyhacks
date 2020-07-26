@@ -1,0 +1,62 @@
+body {
+    background-color: black;
+}
+
+#questions {
+    background-color: black;
+}
+
+ul {
+    justify-content: center;
+}
+
+
+  .choices {
+    /* margin: 10px 0 0 0; */
+    padding: 10px;
+  }
+  
+  .choices li {
+    display: inline-block;
+    margin: 0 10px 20px 0;
+    height: 40px;
+    position: relative;
+  }
+  
+  .choices label,
+  .choices input {
+    display: flex;
+    white-space: nowrap;
+    position: relative;
+    word-break: break-all;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+  }
+  
+  .choices input[type="radio"] {
+    opacity: 0;
+    z-index: 100;
+  }
+  
+  .choices input[type="radio"]:checked+label,
+  .Checked+label {
+    background: #9400D3;
+    color: white;
+  }
+  
+  .choices label {
+    padding: 10px;
+    border: 1px solid darkviolet;
+    cursor: pointer;
+    z-index: 90;
+    text-align: center;
+    color: darkviolet;
+  }
+  
+  .choices label:hover {
+    background: darkviolet;
+    color: white;
+  }

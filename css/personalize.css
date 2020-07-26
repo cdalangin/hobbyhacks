@@ -1,3 +1,45 @@
+body{
+  display: flex;
+}
+#colorsContainer{
+  flex-grow: 1;
+  margin-left: 3%;
+  margin-top: 2%;
+}
+
+#artistContainer{
+  width: 50%;
+  margin-left: 5%;
+  margin-top: 2%;
+  align-items: center;
+}
+
+h3{
+  color: white;
+  margin-bottom: 2%;
+}
+
+#usefulButton{
+  margin-left: 40%;
+  position: absolute;
+  bottom: 10px;
+  background-color: black;
+  color: white;
+  text-shadow: 1px black;
+  border-color: darkviolet;
+  width: 240px;
+  font-size: 25px;
+}
+
+#usefulButton:focus{
+  background-color: darkviolet;
+}
+
+#painting{
+  max-width: 300px;
+  max-height: 300px;
+}
+
 body {
     background-color: black;
 }
@@ -10,6 +52,11 @@ ul {
     justify-content: center;
 }
 
+.colorDiv{
+  width: 350px;
+  height: 50px;
+  color: black;
+}
 
 .logo {
   width: 10%;

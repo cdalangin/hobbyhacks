@@ -11,6 +11,13 @@ ul {
 }
 
 
+.logo {
+  width: 10%;
+  top: 2.5%;
+  right: 2.5%;
+
+}
+
   .choices {
     /* margin: 10px 0 0 0; */
     padding: 10px;

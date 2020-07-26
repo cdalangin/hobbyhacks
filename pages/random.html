@@ -120,27 +120,36 @@
 
 
     <!-- Contents -->
-    <div class='container-fluid d-flex p-5'>
-        <div class="container p-5">
-            <h1 class='display-3 mb-5 text-center'>What do you wish to be inspired by?</h1>
-            <div class="row">
-                <div class="col-sm-6">
+    <div class='container-fluid d-flex p-3'>
+        <div class="container p-4">
+            <h1 class='display-3 mb-4 text-center'>What do you wish to be inspired by?</h1>
+            <h3 class="text-center">Select all that apply</h6>
+                <div class="row">
+                    <div class="col-sm-6 px-5">
 
-                    <p id="random" class="form-check">
-                        <label><input type="checkbox" id="wordCheck" value="" class="form-check-input"><span
-                                class="form-check-label options mb-1">Word Prompt &nbsp;</span></label>
-                        <label><input type="checkbox" id="colorCheck" value="" class="form-check-input"><span
-                                class="form-check-label options mb-1">Color Palette &nbsp;</span></label>
-                        <label><input type="checkbox" id="songCheck" value="" class="form-check-input"><span
-                                class="form-check-label options">Song Inspo &nbsp;</span></label>
-                    </p>
+                        <p id="random" class="form-check">
+                            <label><input type="checkbox" id="wordCheck" value="" class="form-check-input"><span
+                                    class="form-check-label options mb-1">Word Prompt &nbsp;</span></label><br>
+                            <label><input type="checkbox" id="colorCheck" value="" class="form-check-input"><span
+                                    class="form-check-label options mb-1">Color Palette &nbsp;</span></label><br>
+                            <label><input type="checkbox" id="songCheck" value="" class="form-check-input"><span
+                                    class="form-check-label options">Song Inspo &nbsp;</span></label>
+                        </p>
+
+                        <div class="container text-right">
+                            <button id='getPromptsButton' type="submit"
+                                class="btn btn-outline-dark position-relative">LET'S
+                                GO
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 text-center">
+                        <img src="../media/graphic.png" alt="graphic" class="graphic">
+                    </div>
+
 
                 </div>
-                <div class="col-sm-6 align-self-end">
-                    <button id='getPromptsButton' type="submit" class="btn btn-outline-dark">LET'S GO
-                    </button>
-                </div>
-            </div>
         </div>
     </div>
 

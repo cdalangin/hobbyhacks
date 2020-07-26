@@ -1,5 +1,4 @@
 body {
-    background-size: cover;
     background-color: black;
 }
 
@@ -14,11 +13,18 @@ h1{
 
 }
 
-.btn{
-    color: darkviolet;
-    border-color: darkviolet;
+#getPromptsButton{
+    color: white;
+    border-color: white;
     font-size: 25px;
     right: 5%;
+}
+
+#usefulButton {
+    color: darkviolet;
+    border-color: darkviolet;
+    background-color: black;
+    float: right;
 }
 
 /* .form-check-input{
@@ -40,7 +46,7 @@ h1{
   }
   
   #random span {
-    display: flex;
+    display: block;
     white-space: nowrap;
     padding: 10px 10px;
     text-align: center;
@@ -77,6 +83,11 @@ h3 {
 
 .colorDiv{
     color: black;
+}
+
+.graphic {
+    height: auto;
+    width: 70%;
 }
 
 

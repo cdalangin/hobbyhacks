@@ -3,6 +3,25 @@
     color: white;
     text-shadow: 1px black;
     border-color: darkviolet;
-    width: 240px;
-    font-size: 25px;
+    width: 200px;
+    font-size: 23px;
+    margin-right: 1%;
+    margin-bottom: 1%;
+}
+
+.btn:focus{
+    background-color: darkviolet;
+}
+
+h1{
+    color: darkviolet;
+    margin: auto;
+    text-align: center;
+}
+
+#buttonsDiv{
+    margin-top: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 18%;
 }
